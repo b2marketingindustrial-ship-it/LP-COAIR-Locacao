@@ -40,9 +40,9 @@
   src:
     local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'),
     local('LiberationSans-Bold'), local('Helvetica Bold');
-  size-adjust: 88.6%;
-  ascent-override: 120.77%;
-  descent-override: 33.86%;
+  size-adjust: 102%;
+  ascent-override: 104.9%;
+  descent-override: 29.41%;
   line-gap-override: 0%;
 }
 
