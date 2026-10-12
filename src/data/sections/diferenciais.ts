@@ -1,7 +1,7 @@
 /**
  * Dados da seção "Diferenciais" (biblioteca B2, fase: autoridade).
  *
- * Bloco navy em largura total com a frase de autoridade e a pessoa recortada, e 5
+ * Bloco navy em largura total com a frase de autoridade e a foto de cenário, e 5
  * cards sobrepostos à base do bloco. São 5 exatos: o grid é `lg:grid-cols-5`.
  *
  * COAIR Locação: frase de autoridade = opção 1 do briefing (título 13 do grupo);
@@ -11,8 +11,7 @@ import type { IconName } from '@data/icons'
 import type { Photo } from '@data/types'
 import { site } from '@data/site'
 
-import cenario from '@assets/diferenciais/cenario.png'
-import pessoa from '@assets/diferenciais/pessoa.png'
+import cenario from '@assets/diferenciais/cenario.jpg'
 
 export interface Reason {
   icon: IconName
@@ -22,16 +21,17 @@ export interface Reason {
 
 export const why = {
   eyebrow: `Por que a ${site.brandShort}`,
-  /** Cada item é uma linha do H2 (quebra forçada). 3–6 palavras no total. */
-  titleLines: ['Reduza o risco', 'de parada.'],
+  /** Cada item é uma linha do H2 (quebra forçada). */
+  titleLines: [
+    'Sua indústria precisa de ar comprimido emergencial?',
+    'Tenha as melhores soluções de locação',
+  ],
+  /** Mostra a logo da marca no fim do título. */
+  titleLogo: true,
   text: `Locação de compressores para emergência, parada programada, backup e pico de produção, com avaliação da aplicação pela equipe técnica interna da ${site.brandShort}. Potência, período e prazo de mobilização definidos na cotação, conforme disponibilidade.`,
   scene: {
     src: cenario,
-    alt: 'Sala de compressores industriais com tanques azuis e tubulações',
-  },
-  person: {
-    src: pessoa,
-    alt: `Técnico da ${site.brandShort}`,
+    alt: `Técnico da ${site.brandShort} ao lado de compressores de parafuso ${site.brandShort}`,
   },
   reasons: [
     {
@@ -63,8 +63,8 @@ export const why = {
 } as const satisfies {
   eyebrow: string
   titleLines: readonly string[]
+  titleLogo: boolean
   text: string
   scene: Photo
-  person: Photo
   reasons: readonly [Reason, Reason, Reason, Reason, Reason]
 }

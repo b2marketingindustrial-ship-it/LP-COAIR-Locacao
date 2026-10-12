@@ -47,10 +47,10 @@ export const header = {
 
 export const hero = {
   eyebrow: 'Plano AIR PLAN COAIR',
-  title: 'Locação de compressor de ar para manter sua produção em operação.',
+  title: 'Locação de compressor de ar de parafuso para manter sua produção em operação.',
   /** Trecho do título destacado em verde (precisa existir dentro de `title`). */
   highlight: 'em operação',
-  text: 'Locação de compressores para indústrias em emergências, paradas e demandas temporárias, conforme disponibilidade.',
+  text: 'A COAIR Compressores oferece as melhores condições comerciais para sua indústria não parar.',
   /** Rótulos dos botões do hero (o vocabulário `cta` continua valendo no resto da página). */
   ctaPrimary: 'Solicite uma cotação',
   ctaSecondary: 'Fale com um especialista',
@@ -59,9 +59,9 @@ export const hero = {
     alt: 'Compressor de ar de parafuso COAIR em ambiente industrial',
   },
   points: [
-    { icon: 'zap', line1: 'Locação para emergência,', line2: 'parada, pico e backup' },
-    { icon: 'users', line1: 'Equipe técnica', line2: 'interna' },
-    { icon: 'factory', line1: 'Locação para', line2: 'indústrias' },
+    { icon: 'tag', line1: 'Melhores preços', line2: 'em locação' },
+    { icon: 'cpu', line1: 'Compressores de', line2: 'alta tecnologia' },
+    { icon: 'users', line1: 'Equipe técnica', line2: 'especializada' },
   ],
 } as const satisfies {
   eyebrow: string

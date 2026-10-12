@@ -45,25 +45,18 @@
       ],
       "contract": {
         "itemsPath": "items",
-        "itemsMin": 6,
-        "itemsMax": 24,
+        "itemsMin": 4,
+        "itemsMax": 4,
         "requiredItemFields": [
           "id",
-          "group",
           "title",
           "description",
-          "photo"
+          "icon"
         ],
-        "alsoCount": {
-          "groups": [
-            0,
-            6
-          ]
-        },
         "maxLength": {
           "text": 170,
           "item.title": 40,
-          "item.description": 90
+          "item.description": 100
         }
       },
       "assets": [
@@ -160,7 +153,7 @@
           "photo"
         ],
         "maxLength": {
-          "text": 170,
+          "text": 240,
           "item.description": 90
         }
       },

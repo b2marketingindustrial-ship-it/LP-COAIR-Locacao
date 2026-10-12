@@ -1,20 +1,17 @@
 /**
  * Dados da seção "Aplicações" (biblioteca B2, fase: prova).
  *
- * 4 cards-botão com foto, ícone verde e cabeçalho centrado sobre fundo escuro.
- * O card inteiro é o CTA.
- *
- * COAIR Locação: as 4 etapas do atendimento inferidas dos anúncios (descrições 3
- * e 4), sem prazo. Fotos PROVISÓRIAS, recortadas do banner do hero e do cenário
- * dos diferenciais — trocar por fotos de equipamento de locação em operação.
+ * COAIR Locação: os 4 modelos disponíveis para locação, com as fotos enviadas pelo
+ * cliente centralizadas em fundo branco 4:3. O card inteiro é o CTA.
  */
 import type { Photo } from '@data/types'
 import type { IconName } from '@data/icons'
+import { site } from '@data/site'
 
-import app1 from '@assets/aplicacoes/aplicacao-1.png'
-import app2 from '@assets/aplicacoes/aplicacao-2.png'
-import app3 from '@assets/aplicacoes/aplicacao-3.png'
-import app4 from '@assets/aplicacoes/aplicacao-4.png'
+import ca75 from '@assets/aplicacoes/coair-ca75.jpg'
+import comSecador from '@assets/aplicacoes/coair-com-secador.jpg'
+import ca11 from '@assets/aplicacoes/coair-ca11.jpg'
+import hd75 from '@assets/aplicacoes/coair-hd75-vsd.jpg'
 
 export interface Application {
   id: string
@@ -25,37 +22,40 @@ export interface Application {
 }
 
 export const applications = {
-  eyebrow: 'Como funciona a locação',
-  title: 'Do pedido à mobilização do compressor',
-  text: 'Atendimento B2B com avaliação da aplicação, da necessidade e do período de locação. Disponibilidade, potência e prazo de mobilização confirmados na cotação.',
+  eyebrow: 'Modelos disponíveis',
+  title: 'Alugue compressores de ar e mantenha sua produção em movimento',
+  text: 'Compressores de ar, secadores e boosters de alta pressão para atender às necessidades da sua indústria. Equipamentos de alto desempenho, prontos para uso, com flexibilidade na locação e confiabilidade para sua operação.',
   items: [
     {
-      id: 'avaliacao',
-      label: 'Avaliação da aplicação',
-      description: 'A equipe técnica avalia aplicação, necessidade e período.',
-      icon: 'search',
-      photo: { src: app1, alt: 'Compressor de ar de parafuso COAIR em planta industrial' },
+      id: 'ca75',
+      label: 'XFLOW CA7.5',
+      description: 'Compressor de parafuso compacto da linha XFLOW.',
+      icon: 'cog',
+      photo: { src: ca75, alt: `Compressor de parafuso ${site.brandShort} XFLOW CA7.5` },
     },
     {
-      id: 'potencia',
-      label: 'Potência e período',
-      description: 'Definição da potência do equipamento e do tempo de uso.',
+      id: 'com-secador',
+      label: 'Compressor com secador',
+      description: 'Compressor de parafuso com secador e reservatório integrados.',
+      icon: 'droplet',
+      photo: {
+        src: comSecador,
+        alt: `Compressor de parafuso ${site.brandShort} com secador sobre reservatório de ar`,
+      },
+    },
+    {
+      id: 'ca11',
+      label: 'XFLOW CA11',
+      description: 'Compressor de parafuso da linha XFLOW.',
+      icon: 'cog',
+      photo: { src: ca11, alt: `Compressor de parafuso ${site.brandShort} XFLOW CA11` },
+    },
+    {
+      id: 'hd75-vsd',
+      label: 'HD75 VSD Heavy Duty',
+      description: 'Compressor de parafuso com velocidade variável (VSD).',
       icon: 'gauge',
-      photo: { src: app2, alt: 'Unidade compressora de parafuso em sala de compressores' },
-    },
-    {
-      id: 'disponibilidade',
-      label: 'Disponibilidade',
-      description: 'Confirmação do equipamento disponível para o período.',
-      icon: 'clipboard-check',
-      photo: { src: app3, alt: 'Compressor de ar industrial ao lado de reservatório e tubulações' },
-    },
-    {
-      id: 'mobilizacao',
-      label: 'Mobilização',
-      description: 'O compressor é mobilizado até o local da operação.',
-      icon: 'truck',
-      photo: { src: app4, alt: 'Sala de compressores com reservatórios azuis e tubulação de ar' },
+      photo: { src: hd75, alt: `Compressor de parafuso ${site.brandShort} HD75 VSD Heavy Duty` },
     },
   ],
 } as const satisfies {
