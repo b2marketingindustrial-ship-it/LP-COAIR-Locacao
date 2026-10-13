@@ -24,7 +24,8 @@ export interface Application {
 export const applications = {
   eyebrow: 'Modelos disponíveis',
   title: 'Alugue compressores de ar e mantenha sua produção em movimento',
-  text: 'Compressores de ar, secadores e boosters de alta pressão para atender às necessidades da sua indústria. Equipamentos de alto desempenho, prontos para uso, com flexibilidade na locação e confiabilidade para sua operação.',
+  /** `\n` = quebra de linha a partir de 1024px (pedido de 13/10/2026). */
+  text: 'Compressores de ar, secadores e boosters de alta pressão para atender às necessidades da sua indústria.\nEquipamentos de alto desempenho, prontos para uso, com flexibilidade na locação e confiabilidade para sua operação.',
   items: [
     {
       id: 'ca75',

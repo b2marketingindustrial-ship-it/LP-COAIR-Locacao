@@ -9,7 +9,7 @@ import type { Photo } from '@data/types'
 import type { IconName } from '@data/icons'
 import { site } from '@data/site'
 
-import frota from '@assets/vitrine/frota-coair.jpg'
+import frota from '@assets/vitrine/frota-coair.webp'
 
 export interface Benefit {
   id: string

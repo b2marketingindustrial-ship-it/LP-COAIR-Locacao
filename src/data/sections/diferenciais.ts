@@ -26,8 +26,8 @@ export const why = {
     'Sua indústria precisa de ar comprimido emergencial?',
     'Tenha as melhores soluções de locação',
   ],
-  /** Mostra a logo da marca no fim do título. */
-  titleLogo: true,
+  /** Mostra a logo da marca no fim do título (removida a pedido em 13/10/2026). */
+  titleLogo: false,
   text: `Locação de compressores para emergência, parada programada, backup e pico de produção, com avaliação da aplicação pela equipe técnica interna da ${site.brandShort}. Potência, período e prazo de mobilização definidos na cotação, conforme disponibilidade.`,
   scene: {
     src: cenario,

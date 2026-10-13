@@ -86,14 +86,11 @@ export const quote = {
     { icon: 'clipboard-check', label: 'Engenharia\nAplicada' },
     { icon: 'users', label: 'Equipe Técnica\nInterna' },
   ],
-  /** Nota de LGPD exibida abaixo do formulário. */
-  lgpd: `Seus dados são usados apenas para responder à sua solicitação de cotação, conforme a LGPD.`,
 } as const satisfies {
   eyebrow: string
   title: string
   text: string
   trust: readonly [TrustItem, TrustItem, TrustItem]
-  lgpd: string
 }
 
 /* ------------------------------------------------------------------ footer */
@@ -101,8 +98,8 @@ export const quote = {
 export const footer = {
   /** Frase da marca ao lado da logo. */
   tagline: 'Locação de compressores para emergência, parada programada, backup e pico de produção',
+  /** Nome acessível do bloco de contatos (não aparece na tela). */
   contactLabel: 'Atendimento',
-  quoteLabel: 'Solicite sua cotação',
   quoteButton: 'Solicitar cotação',
   credit: { label: 'B2 Marketing Industrial', url: 'https://b2marketingindustrial.com.br' },
 } as const

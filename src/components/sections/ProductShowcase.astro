@@ -3,8 +3,11 @@
  * Vitrine — fase "oferta", no formato "Por que escolher nosso serviço de locação?".
  *
  * COAIR Locação: cabeçalho à esquerda, foto da frota num palco branco e 4 vantagens em
- * cards azul-marinho com ícone verde (2 ao lado da foto, 2 abaixo), no modelo enviado
- * pelo cliente. Mantém o id `vitrine` e o nome do componente da composição.
+ * cards azul-marinho com ícone verde. Partiu do modelo do cliente (2 cards ao lado da foto,
+ * 2 abaixo); em 13/10/2026 as 4 vantagens passaram a uma coluna ao lado da foto, todas da
+ * mesma altura e fechando com ela em cima e embaixo — no 2 + 2, os cards ao lado da foto
+ * esticavam até a altura dela e ficavam vazios, e os de baixo, baixos. Mantém o id
+ * `vitrine` e o nome do componente da composição.
  */
 import { Image } from 'astro:assets'
 import Section from '@components/Section.astro'
@@ -23,54 +26,64 @@ const { tone, rhythm } = Astro.props
   tone={tone}
   rhythm={rhythm}
   container={false}
-  class="relative isolate overflow-hidden"
+  class="relative isolate overflow-hidden pt-(--section-gap)! pb-[calc(var(--section-gap)/2)]!"
 >
+  {/* COAIR: respiro único entre seções (global.css) no lugar do ritmo da composição. O vão
+      até o painel do identificar fica metade aqui, metade lá. */}
   <div aria-hidden="true" class="vitrine-bg pointer-events-none absolute inset-0 -z-10"></div>
 
-  <div class="mx-auto max-w-[1152px] px-6 lg:px-10">
+  <div class="mx-auto max-w-page px-6 lg:px-10">
     <SectionHeader
       eyebrow={showcase.eyebrow}
       title={showcase.title}
       text={showcase.text}
-      width="2xl"
+      width="full"
       accent="green"
       shape="dash"
     />
 
-    <div class="mt-8 grid gap-4 lg:grid-cols-2 lg:gap-5">
-      {/* Foto da frota COAIR; os 2 primeiros cards ficam ao lado dela e os outros 2 abaixo */}
-      <div class="overflow-hidden rounded-xl bg-neutral-light shadow-[0_1px_2px_rgba(16,24,40,0.04),0_10px_24px_-14px_rgba(16,24,40,0.2)] lg:row-span-2">
+    <div class="mt-8 grid gap-4 lg:grid-cols-2 lg:gap-12">
+      {/* Frota COAIR recortada (fundo transparente) direto sobre o fundo da seção, sem caixa
+          nem margem (13/10/2026). É ela que dá a altura do bloco: os cards ao lado se dividem
+          nessa altura (a partir de 1430px batem exatamente; abaixo disso, se os cards
+          precisarem de mais altura, a imagem fica centrada) */}
+      <div class="flex items-center">
         <Image
           src={showcase.photo.src}
           alt={showcase.photo.alt}
           format="webp"
           widths={[480, 800, 1200]}
-          sizes="(min-width: 1024px) 536px, 100vw"
+          sizes="(min-width: 1430px) 651px, (min-width: 1024px) 45vw, 100vw"
           loading="lazy"
           decoding="async"
           class="h-full w-full object-contain"
         />
       </div>
 
-      {showcase.items.map((item) => (
-        <button
-          type="button"
-          data-cta={`vitrine-${item.id}`}
-          class="btn-slave-whats benefit-card text-left"
-        >
-          <span class="benefit-icon">
-            <Icon name={item.icon} class="size-6" />
-          </span>
-          <span class="flex flex-col gap-1">
-            <span class="font-display text-lg leading-tight font-extrabold text-neutral-light">
-              {item.title}
-            </span>
-            <span class="font-sans text-sm leading-relaxed text-neutral-light/75">
-              {item.description}
-            </span>
-          </span>
-        </button>
-      ))}
+      {/* 4 vantagens em coluna, todas com a mesma altura, dividindo a altura da imagem */}
+      <ul class="grid gap-3 lg:grid-rows-4">
+        {showcase.items.map((item) => (
+          <li>
+            <button
+              type="button"
+              data-cta={`vitrine-${item.id}`}
+              class="btn-slave-whats benefit-card h-full w-full text-left"
+            >
+              <span class="benefit-icon">
+                <Icon name={item.icon} class="size-6" />
+              </span>
+              <span class="flex flex-col gap-1">
+                <span class="font-display text-lg leading-tight font-extrabold text-neutral-light">
+                  {item.title}
+                </span>
+                <span class="font-sans text-sm leading-snug text-neutral-light/75">
+                  {item.description}
+                </span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </Section>
@@ -89,7 +102,8 @@ const { tone, rhythm } = Astro.props
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1.5rem;
+    /* Respiro vertical curto: o card estica até 1/4 da altura da imagem ao lado. */
+    padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
     border-bottom: 3px solid var(--color-brand-green);
     background-image: linear-gradient(
