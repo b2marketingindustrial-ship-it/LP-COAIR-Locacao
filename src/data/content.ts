@@ -60,7 +60,7 @@ export const hero = {
   },
   points: [
     { icon: 'tag', line1: 'Melhores preços', line2: 'em locação' },
-    { icon: 'cpu', line1: 'Compressores de', line2: 'alta tecnologia' },
+    { icon: 'gauge', line1: 'Dimensionamento', line2: 'para a sua demanda' },
     { icon: 'users', line1: 'Equipe técnica', line2: 'especializada' },
   ],
 } as const satisfies {

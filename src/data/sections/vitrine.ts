@@ -21,7 +21,8 @@ export interface Benefit {
 export const showcase = {
   eyebrow: 'Locação AIR PLAN',
   title: 'Por que escolher nosso serviço de locação?',
-  text: 'Oferecemos serviços de aluguel de compressores de ar que são rápidos, confiáveis e personalizados, seja em emergências ou planejamentos estratégicos.',
+  /** Locação como solução para cenários específicos, não como substituta da compra (revisão de 14/10/2026). */
+  text: 'A locação é a solução para demandas temporárias ou imprevistas: emergência, parada programada, backup ou pico. Para uso contínuo, avaliamos também a compra.',
   photo: {
     src: frota,
     alt: `Linha de compressores de parafuso ${site.brandShort} disponíveis para locação`,
@@ -29,9 +30,9 @@ export const showcase = {
   items: [
     {
       id: 'economia',
-      title: 'Economia garantida',
+      title: 'Sem imobilizar capital',
       description:
-        'Sem custos iniciais de compra ou manutenção: você paga apenas pelo uso, otimizando recursos.',
+        'Atenda a demanda temporária sem investir na compra de um equipamento que ficaria parado.',
       icon: 'tag',
     },
     {
@@ -43,15 +44,15 @@ export const showcase = {
     },
     {
       id: 'tecnologia',
-      title: 'Alta tecnologia',
-      description: `Compressores ${site.brandShort} atualizados para máxima eficiência e produtividade.`,
-      icon: 'cpu',
+      title: 'Eficiência conforme a demanda',
+      description: `Compressores ${site.brandShort} dimensionados para o consumo, com opção VSD que ajusta o ar ao uso.`,
+      icon: 'gauge',
     },
     {
       id: 'manutencao',
       title: 'Manutenção inclusa',
       description:
-        'Equipamentos revisados e em perfeito estado, sem custos adicionais além da locação.',
+        'Equipamentos revisados, com manutenção, frete e instalação definidos em contrato.',
       icon: 'wrench',
     },
   ],

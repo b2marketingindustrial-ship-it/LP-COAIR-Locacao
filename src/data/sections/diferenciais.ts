@@ -41,8 +41,8 @@ export const why = {
     },
     {
       icon: 'gauge',
-      title: 'Equipamentos de alta performance',
-      description: 'Compressores com alta tecnologia de ar comprimido.',
+      title: 'Equipamentos confiáveis',
+      description: 'Compressores de parafuso revisados para regime contínuo.',
     },
     {
       icon: 'truck',

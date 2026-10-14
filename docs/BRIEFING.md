@@ -42,23 +42,23 @@ Desvios registrados:
 
 ## Entradas do núcleo
 
-| #   | Entrada                 | Status     | Valor                                                                                                                |
-| --- | ----------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
-| 1   | MARCA                   | extraído   | COAIR Compressores de Ar                                                                                             |
-| 2   | MARCA_CURTA             | extraído   | COAIR                                                                                                                |
-| 3   | PRODUTO_PRINCIPAL       | inferido   | Locação de compressores de ar                                                                                        |
-| 4   | CONTEXTO_DE_USO         | inferido   | indústrias (title: "Locação de compressores de ar para indústrias \| COAIR")                                         |
-| 5   | PUBLICO                 | pendência  | não registrado para a Locação                                                                                        |
-| 6   | HERO                    | confirmado | Melhores preços / em locação · Compressores de / alta tecnologia · Equipe técnica / especializada (ajustes de 12/10) |
-| 7   | MARCAS_ATENDIDAS        | default    | não se aplica: a locação é da frota própria COAIR; sem logos de fabricante                                           |
-| 8   | SELOS_DE_CONFIANCA      | inferido   | Atendimento B2B Industrial · Engenharia Aplicada · Equipe Técnica Interna                                            |
-| 9   | ENDERECO                | extraído   | Alameda Mercúrio, 164 - American Park Empresarial Nr, Indaiatuba - SP, 13347-662                                     |
-| 10  | URL_FINAL + PRIVACIDADE | inferido   | https://www.coair.com.br/locacao/industrial; sem política de privacidade (e, desde 13/10, sem nota de LGPD)          |
-| 11  | SHORTCODES              | default    | `[atendimento_chat id="default"]` · `[atendimento_form id="default-form"]`                                           |
-| 12  | WHATSAPP                | confirmado | 5519993544919 (confirmado como WhatsApp na LP de Peças). Só no ícone do footer desde 13/10                           |
-| 13  | STACK + PUBLICACAO      | default    | Astro + Tailwind 4 · main → wp-build                                                                                 |
-| 14  | TOKENS_DE_COR + FONTE   | default    | visual COAIR (navy + verde da logo, Manrope), igual à LP de Manutenção                                               |
-| 15  | CAMPANHA                | inferido   | locação de compressor de ar                                                                                          |
+| #   | Entrada                 | Status     | Valor                                                                                                                   |
+| --- | ----------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1   | MARCA                   | extraído   | COAIR Compressores de Ar                                                                                                |
+| 2   | MARCA_CURTA             | extraído   | COAIR                                                                                                                   |
+| 3   | PRODUTO_PRINCIPAL       | inferido   | Locação de compressores de ar                                                                                           |
+| 4   | CONTEXTO_DE_USO         | inferido   | indústrias (title: "Locação de compressores de ar para indústrias \| COAIR")                                            |
+| 5   | PUBLICO                 | pendência  | não registrado para a Locação                                                                                           |
+| 6   | HERO                    | confirmado | Melhores preços / em locação · Dimensionamento / para a sua demanda · Equipe técnica / especializada (revisão de 14/10) |
+| 7   | MARCAS_ATENDIDAS        | default    | não se aplica: a locação é da frota própria COAIR; sem logos de fabricante                                              |
+| 8   | SELOS_DE_CONFIANCA      | inferido   | Atendimento B2B Industrial · Engenharia Aplicada · Equipe Técnica Interna                                               |
+| 9   | ENDERECO                | extraído   | Alameda Mercúrio, 164 - American Park Empresarial Nr, Indaiatuba - SP, 13347-662                                        |
+| 10  | URL_FINAL + PRIVACIDADE | inferido   | https://www.coair.com.br/locacao/industrial; sem política de privacidade (e, desde 13/10, sem nota de LGPD)             |
+| 11  | SHORTCODES              | default    | `[atendimento_chat id="default"]` · `[atendimento_form id="default-form"]`                                              |
+| 12  | WHATSAPP                | confirmado | 5519993544919 (confirmado como WhatsApp na LP de Peças). Só no ícone do footer desde 13/10                              |
+| 13  | STACK + PUBLICACAO      | default    | Astro + Tailwind 4 · main → wp-build                                                                                    |
+| 14  | TOKENS_DE_COR + FONTE   | default    | visual COAIR (navy + verde da logo, Manrope), igual à LP de Manutenção                                                  |
+| 15  | CAMPANHA                | inferido   | locação de compressor de ar                                                                                             |
 
 ## Copy da estrutura fixa
 
@@ -117,6 +117,21 @@ Alinhamento com a LP de Manutenção (mesma base, que recebeu esses ajustes no m
 | Espaçamento entre seções        | respiro único `--section-gap` (`global.css`): 80px a partir de 1024px, 64px abaixo. Mesmo vão do conteúdo de uma seção ao da seguinte e da borda de cada bloco escuro (hero, galeria, diferenciais, footer) ao conteúdo dele. Antes variava de 40 a 96px                                                                                                                                                                                                                                                                             | **desvio:** os paddings sobrescrevem os ritmos da composição (`!` nas seções); o `check:lp` segue calculando o respiro pelos ritmos do `lp.manifest.json` |
 | Vitrine mais coesa              | as 4 vantagens numa coluna ao lado da foto, todas com a mesma altura; descrições equilibradas em 1 ou 2 linhas. No 2 + 2, os cards ao lado da foto esticavam até a altura dela e ficavam vazios, e os de baixo ficavam baixos. Depois, a pedido: imagem nova da frota (recorte transparente) direto sobre o fundo da seção, sem caixa nem margem; a imagem dá a altura do bloco e os cards se dividem nela (mesma altura de 1366px para cima, 7px de diferença em 1280, imagem mais baixa e centrada em 1024); 48px entre as colunas | **desvio do modelo do cliente** (2 cards ao lado da foto, 2 abaixo). No celular segue igual: foto e cards empilhados                                      |
 | Lighthouse antes de publicar    | desktop, limites do CI: performance 0,92 e 0,99, acessibilidade 1, boas práticas 1, SEO 1, LCP 0,82–0,90s, CLS 0 (medido antes de tirar a nota de LGPD e o botão flutuante)                                                                                                                                                                                                                                                                                                                                                          | nenhum                                                                                                                                                    |
+
+## Revisão de copy — 14/10/2026
+
+Sugestões recebidas sobre a copy: não prometer custo zero além da locação, trocar "alta tecnologia" pelo impacto (eficiência, adequação à demanda, confiabilidade) e não posicionar a locação como superior à compra em todos os casos.
+
+| Ponto                | Antes                                                                                 | Depois                                                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Hero, 2º destaque    | Compressores de / alta tecnologia (ícone `cpu`)                                       | Dimensionamento / para a sua demanda (ícone `gauge`)                                                                                 |
+| Vitrine, texto       | serviços "rápidos, confiáveis e personalizados, seja em emergências ou planejamentos" | locação como solução para demanda temporária ou imprevista (emergência, parada, backup, pico); para uso contínuo, avalia-se a compra |
+| Vitrine, card 1      | Economia garantida: sem custos de compra ou manutenção, "você paga apenas pelo uso"   | Sem imobilizar capital: atende a demanda temporária sem comprar um equipamento que ficaria parado                                    |
+| Vitrine, card 3      | Alta tecnologia: "atualizados para máxima eficiência e produtividade" (ícone `cpu`)   | Eficiência conforme a demanda: dimensionados para o consumo, com opção VSD que ajusta o ar ao uso (ícone `gauge`)                    |
+| Vitrine, card 4      | "Equipamentos revisados e em perfeito estado, sem custos adicionais além da locação"  | "Equipamentos revisados, com manutenção, frete e instalação definidos em contrato"                                                   |
+| Diferenciais, card 2 | Equipamentos de alta performance: "Compressores com alta tecnologia de ar comprimido" | Equipamentos confiáveis: "Compressores de parafuso revisados para regime contínuo"                                                   |
+
+A confirmar com a COAIR: o que a "manutenção inclusa" cobre (e o que fica fora, como mau uso) e se frete e instalação entram no preço ou são cobrados à parte. A copy nova não afirma nenhum dos dois.
 
 ## Pendências
 
